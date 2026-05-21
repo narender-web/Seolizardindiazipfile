@@ -40,13 +40,42 @@ $canonical = str_replace('.php', '', $_SERVER['REQUEST_URI']);
     <meta name="twitter:description" content="<?= htmlspecialchars($meta_description ?? 'India\'s premier digital marketing agency') ?>">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.png">
-    <!-- Fonts -->
+    <!-- Critical CSS (above the fold) -->
+    <style>
+        :root{--primary:#1a1a1a;--primary-dark:#000000;--secondary:#00CC88;--dark-nav:#050505;--text:#333333;--bg-white:#ffffff;--font-main:'Inter',sans-serif;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:var(--font-main);color:var(--text);background:var(--bg-white);line-height:1.6;overflow-x:hidden}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        .top-bar{background:var(--dark-nav);color:#aabbcc;padding:8px 0;font-size:.82rem}
+        .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+        .top-bar-left span{margin-right:20px;display:inline-flex;align-items:center;gap:6px}
+        .top-bar-right a{color:#aabbcc;margin-left:12px;font-size:.8rem;transition:var(--transition)}
+        .main-header{position:sticky;top:0;z-index:1000;background:var(--bg-white);box-shadow:0 2px 20px rgba(0,0,0,.08)}
+        .navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px}
+        .logo{display:flex;align-items:center;flex-shrink:0}
+        .nav-menu{display:flex;align-items:center;gap:4px;list-style:none}
+        .nav-link{display:flex;align-items:center;gap:4px;padding:10px 14px;color:var(--text);font-weight:500;font-size:.9rem;border-radius:8px;text-decoration:none}
+        .hamburger{display:none}
+        @media(max-width:991px){.nav-menu{display:none}}
+    </style>
+    <!-- Resource hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preload" href="/assets/css/style.css" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css" media="print" onload="this.media='all'">
+    <!-- Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </noscript>
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
